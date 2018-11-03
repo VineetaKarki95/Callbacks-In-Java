@@ -1,8 +1,9 @@
+package com.vk;
 import java.util.Scanner;
 
 public class Test {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
 		Scanner sc = new Scanner(System.in);
 		char ch;
 		CharacterType cType;
@@ -10,12 +11,14 @@ public class Test {
 		ch =sc.next().charAt(0);
 		if(Character.isDigit(ch))
 		{
-			cType = (CharacterType) new ClassDigit();
+			Class c = Class.forName("com.vk.ClassDigit");
+			cType = (CharacterType)c.newInstance();
 			printCharacterType(cType);			
 		}
 		else
 		{
-			cType = (CharacterType) new ClassAlpha();
+			Class c = Class.forName("com.vk.ClassAlpha");
+			cType = (CharacterType)c.newInstance();
 			printCharacterType(cType);	
 		}
 

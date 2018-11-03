@@ -1,3 +1,4 @@
+package com.vk;
 
 public class ClassAlpha implements CharacterType{
 
